@@ -1,0 +1,14 @@
+{
+    "name": "24i_sampleapp",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Davide Zanetti",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.17.0"
+    }
+  }
+  
