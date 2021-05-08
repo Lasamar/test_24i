@@ -1,0 +1,2 @@
+- build node image doc : https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+- Travis required the .travis file to be yml and not yaml.... and the repo must be public
