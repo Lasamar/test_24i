@@ -16,3 +16,15 @@ after_success:
   - eval $(aws ecr get-login)
   - docker tag lasamar/test24i_sampleapp:latest $DOCKER_REGISTRY_ECR/davide_sampletest:$TRAVIS_COMMIT
   - docker push $DOCKER_REGISTRY_ECR/davide_sampletest:$TRAVIS_COMMIT
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: $AWS_ACCESS_KEY_ID
+  secret_access_key:
+    secure: $AWS_SECRET_ACCESS_KEY
+  region: $AWS_DEFAULT_REGION
+  app: "davide"
+  env: "Davide"
+  bucket_name: "24i-build-artifact"
+  bucket_path: Davide
