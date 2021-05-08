@@ -13,6 +13,7 @@ script:
   - python3 quicktest.py
 
 after_success:
+  - pip install --user awscli
   - eval $(aws ecr get-login)
   - docker tag lasamar/test24i_sampleapp:latest $DOCKER_REGISTRY_ECR/davide_sampletest:$TRAVIS_COMMIT
   - docker push $DOCKER_REGISTRY_ECR/davide_sampletest:$TRAVIS_COMMIT
